@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Libre+Barcode+39+Extended+Text&family=Matemasie&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background 1s ease-in-out, color 0.34s ease-in-out, height 0.13s ease-in-out;
+}
+
+h1,
+h2,
+h3 {
+  font-size: 0.89rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 13px;
+}
+
+body {
+  background-color: black;
+  color: wheat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 3vh;
+  overflow: hidden;
+  font-family: "Comfortaa", sans-serif;
+  cursor: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+body #cursor {
+  position: absolute;
+  height: 34px;
+  aspect-ratio: 1/1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: red;
+  mix-blend-mode: exclusion;
+  z-index: -10;
+}
+body #explain-container {
+  width: clamp(89%, -moz-fit-content, 1920px);
+  width: clamp(89%, fit-content, 1920px);
+  margin: 0 13px;
+  text-align: left;
+  text-wrap: balance;
+  font-weight: bold;
+}
+body #explain-container .explain-text {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 300px));
+  align-items: center;
+  justify-content: center;
+  gap: 3vw;
+  justify-content: center;
+  width: 89%;
+  margin: auto;
+}
+body #explain-container .explain-text .explain {
+  padding: 13px;
+  border-radius: 5px;
+  mix-blend-mode: color-dodge;
+}
+body #explain-container .explain-text .explain + .list-style li {
+  margin: 13px 0;
+  list-style-position: inside;
+}
+body #time-container {
+  font-size: calc(13vw + 13px);
+  letter-spacing: 1px;
+  font-family: "Libre Barcode 39 Extended Text";
+}
+body #time-container div {
+  text-align: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+body #font-selector {
+  display: flex;
+  gap: 3vw;
+}
+body #font-selector button {
+  position: relative;
+  border: none;
+  background: transparent;
+  mix-blend-mode: exclusion;
+  color: whitesmoke;
+  font-size: 1rem;
+  text-transform: capitalize;
+  transition: 0.55s ease-in-out;
+  cursor: none;
+}
+body #font-selector button::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  bottom: -8px;
+  left: 50%;
+  translate: -50%;
+  height: 3px;
+  width: 8%;
+  transition: width 0.55s ease-in-out;
+}
+body #font-selector button:hover::after {
+  width: 110%;
+  filter: opacity(55%);
+}
+body footer {
+  font-size: 0.89rem;
+  text-align: center;
+}
+
+.bubble {
+  font-family: "Matemasie", arial;
+  letter-spacing: -9px;
+  color: red;
+  background: black;
+}/*# sourceMappingURL=styles.css.map */
