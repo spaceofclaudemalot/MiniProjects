@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>SuperTask</title>
+  </head>
+  <body>
+    <header>
+      <h1>SuperTask</h1>
+    </header>
+    <main>
+      <div id="eisenhower-container">
+        <div id="eisenhower-container-todo" class="matrix-bloc">
+          <h2>to do today</h2>
+          <ul></ul>
+        </div>
+        <div id="eisenhower-container-todelegate" class="matrix-bloc">
+          <h2>to delegate</h2>
+          <ul></ul>
+        </div>
+        <div id="eisenhower-container-toschedule" class="matrix-bloc">
+          <h2>to schedule</h2>
+          <ul></ul>
+        </div>
+        <!-- <div id="eisenhower-container-toignore" class="matrix-bloc">
+          <h2>to ignore</h2>
+          <ul></ul>
+        </div> -->
+      </div>
+      <form action="">
+        <div class="form-item">
+          <label for="task">Title</label>
+          <input
+            type="text"
+            id="task"
+            placeholder="Enter things to be done..."
+          />
+        </div>
+      </form>
+    </main>
+    <footer>
+      <p>
+        Copyright © SUPERTASK <span id="year"></span> | Simplify productivity
+        with Eisenhower matrix | version 0.0
+      </p>
+    </footer>
+    <script type="module" src="./JS/scripts.js"></script>
+  </body>
+</html>
