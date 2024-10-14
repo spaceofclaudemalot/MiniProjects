@@ -1,73 +1,60 @@
-// ++++++++++++++++++++ TASKS MANAGEMENT +++++++++++++++++++++++++
-const form = document.querySelector("form");
+const form = document.querySelector(".form-addTask");
+const pendingTasks = document.querySelector(".pending-tasks");
 
-// ------------------------------------------------------------
-//FUNCTIONS
-// ------------------------------------------------------------
-
-function setCurrentYear() {
-  // Set current year in footer
-  const yearElement = document.getElementById("year");
-  const currentYear = new Date().getFullYear();
-  yearElement.textContent = currentYear;
+// --------------------------
+// FUNCTIONS
+// --------------------------
+function getYear() {
+  const yearElement = document.querySelector(".year");
+  yearElement.textContent = new Date().getFullYear();
 }
-function loadPendingTasksFromStorage() {
-  const pendingTasksElement = document.querySelector("#pending-tasks ul");
 
-  if (localStorage.pendingTasksStorage) {
-    pendingTasksElement.innerHTML = localStorage.pendingTasksStorage;
+function storage() {
+  window.localStorage.pendingTasksStorage = pendingTasks.innerHTML;
+  window.localStorage.dueDateStorage =
+    document.querySelector(".due-date").value;
+  window.localStorage.priorityLevelStorage = document.querySelector(
+    "#priorityLevelSelector"
+  ).value;
+}
+function getStorage() {
+  const pendingTasks = document.querySelector(".pending-tasks");
+  if (window.localStorage.pendingTasksStorage) {
+    pendingTasks.innerHTML = window.localStorage.pendingTasksStorage;
   }
 }
 
-// ------------------------------------------------------------
-//EVENTS
-// ------------------------------------------------------------
-
+// -------------------------
+// EVENTS
+// -------------------------
 window.addEventListener("load", () => {
-  loadPendingTasksFromStorage();
-  setCurrentYear();
+  getYear();
+  getStorage();
 });
 
-// ------------------ WAITING TASKS
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const pendingTasks = document.querySelector("#pending-tasks ul");
-  pendingTasks.innerHTML += `
-            <li class="task-item" >
-                <p contenteditable>
-                    ${e.target.task.value}
-                </p>
-                <input type="date" name="date" class="due-date">
-                <select name="priority" id="priority" required>
-                    <option class="priority-level-5" value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
-                    <option class="priority-level-4" value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
-                    <option class="priority-level-3" value="⭐⭐⭐" selected>⭐⭐⭐</option>
-                    <option class="priority-level-2" value="⭐⭐">⭐⭐</option>
-                    <option class="priority-level-1" value="⭐">⭐</option>
-                </select>
-            </li>
-        `;
-  task.value = "";
-  window.localStorage.pendingTasksStorage = pendingTasks.innerHTML;
-});
+  const taskTodoInput = document.querySelector("#task");
 
-// ------------------ SAVE CHANGES PENDING TASK NAME
-document.querySelector("#pending-tasks ul").addEventListener("input", (e) => {
-  if (e.target.tagName === "P") {
-    window.localStorage.pendingTasksStorage =
-      e.target.parentNode.parentNode.innerHTML;
-  }
+  const today = new Date().toISOString().split("T")[0];
+
+  pendingTasks.innerHTML += `
+    <li class="pending-task">
+      <p contenteditable="">${taskTodoInput.value}</p>
+      <input type="date" name="due-date" id="due-date" class="due-date" />
+      <select for="" id="PriorityLevelSelector">
+        <option class="priorityLevel1-color" value="⭐⭐⭐⭐⭐">Urgence n1</option>
+        <option class="priorityLevel2-color" value="⭐⭐⭐⭐">High level</option>
+        <option class="priorityLevel3-color" value="⭐⭐⭐" selected>Medium level</option>
+        <option class="priorityLevel4-color" value="⭐⭐">Low level</option>
+        <option class="priorityLevel5-color" value="⭐">Very low Level</option>
+      </select>
+    </li>`;
+
+  taskTodoInput.value = "";
+
+  const dueDateInput = document.querySelector(".due-date");
+  dueDateInput.value = today;
+
+  storage();
 });
-function moveDueDateElement() {
-  const dueDateElements = document.querySelectorAll(
-    "#pending-tasks ul li .due-date"
-  );
-  const twoDaysFromNow = new Date();
-  twoDaysFromNow.setDate(twoDaysFromNow.getDate() + 2);
-  dueDateElements.forEach((dueDateElement) => {
-    if (new Date(dueDateElement.value) > twoDaysFromNow) {
-      const todoList = document.querySelector("#eisenhower-container-todo ul");
-      todoList.appendChild(dueDateElement.parentNode);
-    }
-  });
-}

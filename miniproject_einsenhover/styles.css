@@ -1,0 +1,185 @@
+:root {
+  --text-color: whitesmoke;
+  --primary-color: darkgreen;
+  --secondary-color: darkgoldenrod;
+
+  --priorityLevel1-color: darkred;
+  --priorityLevel2-color: darkblue;
+  --priorityLevel3-color: darkgreen;
+  --priorityLevel4-color: darkgoldenrod;
+  --priorityLevel5-color: grey;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  transition: all 0.34s ease-in-out;
+}
+
+body {
+  outline: solid darkgoldenrod 2px;
+  outline-offset: -5px;
+  border-radius: 5px;
+
+  height: 100dvh;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  color: whitesmoke;
+  background: linear-gradient(to bottom right, var(--primary-color), black);
+
+  font-family: sans-serif;
+  text-align: center;
+  user-select: none;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.89rem;
+}
+.header__logo {
+  height: 21px;
+  aspect-ratio: 1/1;
+  margin-right: 1rem;
+}
+
+main {
+  /* border: solid whitesmoke thin; */
+  padding: 1rem;
+  margin: auto;
+  border-radius: 5px;
+  width: 89%;
+
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: darkgoldenrod transparent;
+}
+form {
+  background-color: rgba(245, 245, 245, 0.21);
+  height: fit-content;
+  width: fit-content;
+  padding: 0.55rem;
+  margin: auto;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+form:hover {
+  background-color: rgba(245, 245, 245, 0.34);
+}
+input {
+  height: 2rem;
+  padding: 1rem;
+  width: 34ch;
+  border: none;
+  border-radius: 3px;
+  margin-top: 1rem;
+  text-align: center;
+}
+input[type="text"]:focus {
+  width: 55ch;
+  outline: none;
+
+  box-shadow: 1px 1px 21px 2px black;
+}
+input[type="text"]:placeholder-shown {
+  text-align: center;
+}
+.pending-tasks-container {
+  border: solid whitesmoke thin;
+  border-radius: 5px;
+  padding: 1rem;
+  width: fit-content;
+  margin: auto;
+  max-height: 89%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.pending-tasks-container h2 {
+  font-size: 0.89em;
+}
+li {
+  list-style: none;
+  text-align: left;
+
+  /* border: solid green; */
+  /* margin: 8px 0; */
+
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 130px);
+  align-items: center;
+  justify-content: center;
+
+  column-gap: 13px;
+}
+li p {
+  max-width: 21ch;
+  /* border: solid green; */
+  /* height: 3rem; */
+  padding: 0.55rem;
+}
+li p:focus {
+  border: none;
+  outline: none;
+  border-radius: 3px;
+}
+li input[type="date"] {
+  width: 21ch;
+  height: auto;
+  background: transparent;
+  color: var(--text-color);
+  margin: auto;
+}
+li input[type="date"]:focus {
+  border: none;
+  outline: none;
+  border-radius: 3px;
+}
+li select {
+  /* height: 3rem; */
+  padding: 0.55rem;
+  background: none;
+  border: none;
+  border-radius: 5px;
+
+  color: whitesmoke;
+}
+
+li select .priorityLevel1-color {
+  background-color: var(--priorityLevel1-color);
+}
+li select .priorityLevel2-color {
+  background-color: var(--priorityLevel2-color);
+}
+li select .priorityLevel3-color {
+  background-color: var(--priorityLevel3-color);
+}
+li select .priorityLevel4-color {
+  background-color: var(--priorityLevel4-color);
+}
+li select .priorityLevel5-color {
+  background-color: var(--priorityLevel5-color);
+}
+
+footer p {
+  font-size: 0.55rem;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}

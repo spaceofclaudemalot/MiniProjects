@@ -3,53 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>SuperTask</title>
+    <title>SuperTask - Eisenhower Matrix</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="shortcut icon"
+      href="https://api.iconify.design/fxemoji:star.svg"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <header>
-      <h1>SuperTask</h1>
+      <img
+        src="https://api.iconify.design/fxemoji:star.svg"
+        alt="SuperTask logo"
+        class="header__logo"
+      />
+      <h1>superTask</h1>
     </header>
-    <main>
-      <div id="eisenhower-container">
-        <div id="eisenhower-container-todo" class="matrix-bloc">
-          <h2>to do today</h2>
-          <ul></ul>
-        </div>
-        <div id="eisenhower-container-todelegate" class="matrix-bloc">
-          <h2>to delegate</h2>
-          <ul></ul>
-        </div>
-        <div id="eisenhower-container-toschedule" class="matrix-bloc">
-          <h2>to schedule</h2>
-          <ul></ul>
-        </div>
-        <!-- <div id="eisenhower-container-toignore" class="matrix-bloc">
-          <h2>to ignore</h2>
-          <ul></ul>
-        </div> -->
-      </div>
-      <form>
-        <div class="form-item">
-          <!-- <label for="task"></label> -->
-          <input
-            type="text"
-            id="task"
-            placeholder="Enter things to be done..."
-          />
-        </div>
+
+    <main id="app">
+      <form class="form-addTask">
+        <input
+          type="text"
+          name="task"
+          id="task"
+          placeholder="Enter things to be done."
+          required
+          minlength="2"
+        />
       </form>
-      <div id="pending-tasks">
-        <h2>Pending tasks</h2>
-        <ul></ul>
-      </div>
+      <section class="pending-tasks-container">
+        <h2>Pending Tasks</h2>
+        <ul class="pending-tasks"></ul>
+      </section>
     </main>
+
     <footer>
       <p>
-        Copyright © SUPERTASK <span id="year"></span> | Simplify productivity
-        with Eisenhower matrix | version 0.0
+        Copyright SUPERTASK &copy; <span class="year"></span> | Simplify your
+        productivity based on Eisenhower Matrix
       </p>
     </footer>
-    <script type="module" src="./scripts.js"></script>
+    <script src="./scripts.js"></script>
   </body>
 </html>
