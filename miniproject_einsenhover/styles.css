@@ -2,7 +2,6 @@
   --text-color: whitesmoke;
   --primary-color: darkgreen;
   --secondary-color: darkgoldenrod;
-
   --priorityLevel1-color: darkred;
   --priorityLevel2-color: darkblue;
   --priorityLevel3-color: darkgreen;
@@ -14,7 +13,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
   transition: all 0.34s ease-in-out;
 }
 
@@ -22,25 +20,29 @@ body {
   outline: solid darkgoldenrod 2px;
   outline-offset: -5px;
   border-radius: 5px;
-
   height: 100dvh;
   padding: 1rem;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
   color: whitesmoke;
   background: linear-gradient(to bottom right, var(--primary-color), black);
-
   font-family: sans-serif;
   text-align: center;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 h2 {
   margin-bottom: 1rem;
+  font-size: 0.89em;
+  text-transform: uppercase;
+}
+
+p {
+  text-wrap: balance;
 }
 
 header {
@@ -48,133 +50,123 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.89rem;
 }
-.header__logo {
-  height: 21px;
+header .header__logo {
+  height: 89%;
   aspect-ratio: 1/1;
-  margin-right: 1rem;
+  margin-right: 3%;
+}
+header .project-title {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.einsenhover-matrix-container .einsenhover-matrix {
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 13px;
+}
+.einsenhover-matrix-container .einsenhover-matrix ul {
+  border-top: solid whitesmoke thin;
+  height: 100%;
+  padding: 1rem;
+}
+.einsenhover-matrix-container .einsenhover-matrix ul .todo-box,
+.einsenhover-matrix-container .einsenhover-matrix ul .delegate-box,
+.einsenhover-matrix-container .einsenhover-matrix ul .schedule-box,
+.einsenhover-matrix-container .einsenhover-matrix ul .ignored-box {
+  padding: 1rem;
 }
 
 main {
-  /* border: solid whitesmoke thin; */
   padding: 1rem;
   margin: auto;
   border-radius: 5px;
   width: 89%;
-
   overflow-y: scroll;
   scrollbar-width: thin;
   scrollbar-color: darkgoldenrod transparent;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
 }
-form {
-  background-color: rgba(245, 245, 245, 0.21);
-  height: fit-content;
-  width: fit-content;
-  padding: 0.55rem;
-  margin: auto;
-  margin-bottom: 1rem;
-  border-radius: 5px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-form:hover {
-  background-color: rgba(245, 245, 245, 0.34);
-}
-input {
-  height: 2rem;
-  padding: 1rem;
-  width: 34ch;
-  border: none;
-  border-radius: 3px;
-  margin-top: 1rem;
-  text-align: center;
-}
-input[type="text"]:focus {
-  width: 55ch;
-  outline: none;
-
-  box-shadow: 1px 1px 21px 2px black;
-}
-input[type="text"]:placeholder-shown {
-  text-align: center;
-}
 .pending-tasks-container {
-  border: solid whitesmoke thin;
-  border-radius: 5px;
+  border-bottom: solid whitesmoke thin;
   padding: 1rem;
+}
+.pending-tasks-container ul {
+  width: -moz-fit-content;
   width: fit-content;
   margin: auto;
   max-height: 89%;
   overflow: hidden;
   overflow-y: scroll;
+  scrollbar-color: darkgoldenrod transparent;
+  scrollbar-width: thin;
 }
-.pending-tasks-container h2 {
-  font-size: 0.89em;
-}
-li {
+.pending-tasks-container ul li {
   list-style: none;
   text-align: left;
-
-  /* border: solid green; */
-  /* margin: 8px 0; */
-
+  border-radius: 5px;
   display: grid;
-  grid-template-columns: 1fr repeat(2, 130px);
+  grid-template-columns: 1fr repeat(3, 130px);
   align-items: center;
   justify-content: center;
-
-  column-gap: 13px;
+  -moz-column-gap: 13px;
+       column-gap: 13px;
 }
-li p {
+.pending-tasks-container ul li:hover {
+  background-color: rgba(184, 134, 11, 0.21);
+  transform: scale(1.01);
+}
+.pending-tasks-container ul li p {
   max-width: 21ch;
   /* border: solid green; */
   /* height: 3rem; */
   padding: 0.55rem;
 }
-li p:focus {
+.pending-tasks-container ul li p:focus {
   border: none;
   outline: none;
   border-radius: 3px;
 }
-li input[type="date"] {
+.pending-tasks-container ul li p.remaining-day {
+  text-align: right;
+}
+.pending-tasks-container ul li input[type=date] {
   width: 21ch;
   height: auto;
   background: transparent;
   color: var(--text-color);
   margin: auto;
 }
-li input[type="date"]:focus {
+.pending-tasks-container ul li input[type=date]:focus {
   border: none;
   outline: none;
   border-radius: 3px;
 }
-li select {
+.pending-tasks-container ul li select {
   /* height: 3rem; */
   padding: 0.55rem;
   background: none;
   border: none;
   border-radius: 5px;
-
   color: whitesmoke;
 }
-
-li select .priorityLevel1-color {
+.pending-tasks-container ul li select .priorityLevel1-color {
   background-color: var(--priorityLevel1-color);
 }
-li select .priorityLevel2-color {
+.pending-tasks-container ul li select .priorityLevel2-color {
   background-color: var(--priorityLevel2-color);
 }
-li select .priorityLevel3-color {
+.pending-tasks-container ul li select .priorityLevel3-color {
   background-color: var(--priorityLevel3-color);
 }
-li select .priorityLevel4-color {
+.pending-tasks-container ul li select .priorityLevel4-color {
   background-color: var(--priorityLevel4-color);
 }
-li select .priorityLevel5-color {
+.pending-tasks-container ul li select .priorityLevel5-color {
   background-color: var(--priorityLevel5-color);
 }
 
@@ -183,3 +175,43 @@ footer p {
   font-family: sans-serif;
   letter-spacing: 1px;
 }
+
+form {
+  background-color: rgba(245, 245, 245, 0.21);
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.34rem;
+  margin: auto;
+  margin: 1rem auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+form:hover {
+  background-color: rgba(245, 245, 245, 0.34);
+}
+
+input {
+  height: 2rem;
+  padding: 1rem;
+  width: 34ch;
+  border: none;
+  border-radius: 3px;
+  margin-top: 0.55rem;
+  text-align: center;
+}
+input[type=text]:focus {
+  width: 55ch;
+  outline: none;
+  box-shadow: 1px 1px 21px -20px black;
+}
+input[type=text]:-moz-placeholder-shown {
+  text-align: center;
+}
+input[type=text]:placeholder-shown {
+  text-align: center;
+}/*# sourceMappingURL=styles.css.map */

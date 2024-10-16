@@ -1,0 +1,50 @@
+:root {
+  --text-color: whitesmoke;
+  --primary-color: darkgreen;
+  --secondary-color: darkgoldenrod;
+
+  --priorityLevel1-color: darkred;
+  --priorityLevel2-color: darkblue;
+  --priorityLevel3-color: darkgreen;
+  --priorityLevel4-color: darkgoldenrod;
+  --priorityLevel5-color: grey;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  transition: all 0.34s ease-in-out;
+}
+
+body {
+  outline: solid darkgoldenrod 2px;
+  outline-offset: -5px;
+  border-radius: 5px;
+
+  height: 100dvh;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  color: whitesmoke;
+  background: linear-gradient(to bottom right, var(--primary-color), black);
+
+  font-family: sans-serif;
+  text-align: center;
+  user-select: none;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 0.89em;
+  text-transform: uppercase;
+}
+
+p {
+  text-wrap: balance;
+}

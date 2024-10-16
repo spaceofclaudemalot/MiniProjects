@@ -1,0 +1,28 @@
+.einsenhover-matrix-container {
+  // padding: 1rem;
+
+  .einsenhover-matrix {
+    // border: solid whitesmoke thin;
+    border-radius: 5px;
+    // padding: 1rem;
+
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: 13px;
+
+    ul {
+      border-top: solid whitesmoke thin;
+      // border-radius: 5px;
+
+      height: 100%;
+      padding: 1rem;
+
+      .todo-box,
+      .delegate-box,
+      .schedule-box,
+      .ignored-box {
+        padding: 1rem;
+      }
+    }
+  }
+}

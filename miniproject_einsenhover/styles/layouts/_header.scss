@@ -1,0 +1,17 @@
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .header__logo {
+    height: 89%;
+    aspect-ratio: 1/1;
+    margin-right: 3%;
+  }
+  .project-title {
+    font-size: 1rem;
+    // font-family: serif;
+    letter-spacing: 1px;
+  }
+}

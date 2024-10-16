@@ -1,0 +1,95 @@
+.pending-tasks-container {
+  // border-radius: 5px;
+  border-bottom: solid whitesmoke thin;
+  padding: 1rem;
+
+  ul {
+    width: fit-content;
+    margin: auto;
+    max-height: 89%;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-color: darkgoldenrod transparent;
+    scrollbar-width: thin;
+
+    li {
+      list-style: none;
+      text-align: left;
+      border-radius: 5px;
+
+      //border: solid green;
+      //margin: 8px 0;
+
+      display: grid;
+      grid-template-columns: 1fr repeat(3, 130px);
+      align-items: center;
+      justify-content: center;
+
+      column-gap: 13px;
+
+      &:hover {
+        background-color: rgba(184, 134, 11, 0.21);
+        transform: scale(1.01);
+      }
+
+      p {
+        max-width: 21ch;
+        /* border: solid green; */
+        /* height: 3rem; */
+        padding: 0.55rem;
+
+        &:focus {
+          border: none;
+          outline: none;
+          border-radius: 3px;
+        }
+
+        &.remaining-day {
+          text-align: right;
+        }
+      }
+
+      input {
+        &[type="date"] {
+          width: 21ch;
+          height: auto;
+          background: transparent;
+          color: var(--text-color);
+          margin: auto;
+        }
+
+        &[type="date"]:focus {
+          border: none;
+          outline: none;
+          border-radius: 3px;
+        }
+      }
+
+      select {
+        /* height: 3rem; */
+        padding: 0.55rem;
+        background: none;
+        border: none;
+        border-radius: 5px;
+
+        color: whitesmoke;
+
+        .priorityLevel1-color {
+          background-color: var(--priorityLevel1-color);
+        }
+        .priorityLevel2-color {
+          background-color: var(--priorityLevel2-color);
+        }
+        .priorityLevel3-color {
+          background-color: var(--priorityLevel3-color);
+        }
+        .priorityLevel4-color {
+          background-color: var(--priorityLevel4-color);
+        }
+        .priorityLevel5-color {
+          background-color: var(--priorityLevel5-color);
+        }
+      }
+    }
+  }
+}

@@ -18,10 +18,35 @@
         alt="SuperTask logo"
         class="header__logo"
       />
-      <h1>superTask</h1>
+      <h1 class="project-title"></h1>
     </header>
 
     <main id="app">
+      <section class="einsenhover-matrix-container">
+        <div class="einsenhover-matrix">
+          <div class="todo-box">
+            <h2>To do</h2>
+            <ul class="todo-list"></ul>
+          </div>
+
+          <div class="delegate-box">
+            <h2>to be delegated</h2>
+            <ul class="delegate-list"></ul>
+          </div>
+
+          <div class="schedule-box">
+            <h2>to be scheduled</h2>
+            <ul class="schedule-list"></ul>
+          </div>
+          
+          <div class="ignored-box">
+            <h2>to be ignored</h2>
+            <ul class="ignore-list"></ul>
+          </div>
+        </div>
+      </div>
+      </section>
+
       <form class="form-addTask">
         <input
           type="text"
@@ -32,6 +57,7 @@
           minlength="2"
         />
       </form>
+
       <section class="pending-tasks-container">
         <h2>Pending Tasks</h2>
         <ul class="pending-tasks"></ul>
@@ -40,8 +66,9 @@
 
     <footer>
       <p>
-        Copyright SUPERTASK &copy; <span class="year"></span> | Simplify your
-        productivity based on Eisenhower Matrix
+        Copyright
+        <span class="project-title"></span> &copy; <span class="year"></span> |
+        Simplify your productivity based on Eisenhower Matrix
       </p>
     </footer>
     <script src="./scripts.js"></script>
