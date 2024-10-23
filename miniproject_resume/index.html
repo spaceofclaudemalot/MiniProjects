@@ -3,22 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LebonCV | Make your resume with simplicity</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="shortcut icon"
+      href="https://api.iconify.design/fxemoji:star.svg"
+      type="image/x-icon"
+    />
   </head>
-  <body>
-    <header>
-      <h1 class="title"></h1>
-    </header>
 
-    <main id="app">
-      <div class="container">
-        <div class="paper-to-print"></div>
+  <body>
+    <header></header>
+    <main>
+      <div class="app-container">
+        <section class="tools-container">
+          <h2>tools</h2>
+          <div class="tools-container__add-experiences">
+            <h3>experience</h3>
+            <button>add experience</button>
+          </div>
+
+          <div class="tools-container__add-references">
+            <h3>Reference</h3>
+            <button>add reference</button>
+          </div>
+        </section>
+
+        <section class="resume-container">
+          <div class="resume-container__area"></div>
+        </section>
+
+        <section class="templates-container"></section>
       </div>
     </main>
-
-    <footer>
-      <div class="footer__botton"></div>
-    </footer>
+    <footer></footer>
     <script src="./index.js"></script>
   </body>
 </html>

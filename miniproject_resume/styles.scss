@@ -1,58 +1,30 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  outline: solid rgba(255, 0, 0, 0.226) thin;
 }
 
 body {
-  display: grid;
-  grid-template-rows: 34px 1fr auto;
-  // gap: 1rem;
-  align-items: space-between;
-  justify-content: center;
-
-  color: whitesmoke;
-  background: linear-gradient(to bottom right, rgb(0, 139, 132), black);
   height: 100dvh;
-}
 
-header {
-  text-align: center;
-  font-size: 0.55em;
-  font-family: sans-serif;
-  padding-top: 0.55em;
-
-  width: 100%;
-}
-
-#app {
-  // border: solid blue thin;
-  overflow: hidden;
-  overflow-y: scroll;
-  scrollbar-width: thin;
-  scrollbar-color: darkgoldenrod transparent;
-
-  .container {
-    // border: solid red thin;
-
-    .paper-to-print {
-      background-color: whitesmoke;
-      padding: 1rem;
-      aspect-ratio: 620 / 877;
-      width: 500px;
+  main {
+    padding: 1rem;
+    .app-container {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 13px;
     }
   }
 }
 
-footer {
-  background-color: black;
-  font-size: 0.55em;
-  letter-spacing: 1px;
-
-  width: 100%;
-  padding: 0.55rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.resume-container {
+  &__area {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    width: 500px;
+  }
 }
