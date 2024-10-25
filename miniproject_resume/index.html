@@ -18,22 +18,62 @@
       <div class="app-container">
         <section class="tools-container">
           <h2>tools</h2>
+          <div class="tools-container__add-education">
+            <h3>Education</h3>
+            <button>add new formation</button>
+          </div>
+
           <div class="tools-container__add-experiences">
-            <h3>experience</h3>
-            <button>add experience</button>
+            <h3>Experience</h3>
+            <button>add new experience</button>
+          </div>
+
+          <div class="tools-container__add-certification">
+            <h3>Certification</h3>
+            <button>add new certification</button>
           </div>
 
           <div class="tools-container__add-references">
             <h3>Reference</h3>
-            <button>add reference</button>
+            <button>add new reference</button>
           </div>
         </section>
 
         <section class="resume-container">
-          <div class="resume-container__area"></div>
+          <div class="resume-container__area template-model-default">
+            <div class="resume-container__area__left">
+              <div class="profile-picture">
+                <input type="file" name="" id="profile-picture-item" />
+              </div>
+              <div class="contacts">
+                <h3>Contacts</h3>
+                <label for="input-phone">phone</label>
+                <input type="tel" name="" id="input-phone" />
+                <label for="input-email">email</label>
+                <input type="email" name="" id="input-email" />
+                <label for="input-adress">address</label>
+                <input type="text" name="" id="input-adress" />
+              </div>
+            </div>
+            <div class="resume-container__area__right"></div>
+          </div>
         </section>
 
-        <section class="templates-container"></section>
+        <section class="templates-container">
+          <h2>templates</h2>
+          <div class="templates-container__models">
+            <h3>Modeles</h3>
+            <button>Default</button>
+            <button>Model a</button>
+            <button>Model b</button>
+            <button>Model c</button>
+          </div>
+
+          <div class="templates-container__color">
+            <h3>Color</h3>
+            <input type="color" name="" id="choose-template-color" />
+          </div>
+        </section>
       </div>
     </main>
     <footer></footer>
